@@ -76,7 +76,7 @@ export default {
         await this.$axios.post('register', {
           name: this.name,
           email: this.email,
-          hender: this.hender,
+          gender: this.gender,
           password: this.password,
           password_confirmation: this.password_confirmation
         })
