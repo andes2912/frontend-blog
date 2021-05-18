@@ -8,7 +8,7 @@
               <div class="alert alert-danger" v-for="(error, index) in errors" :key="index">
               {{ error[0] }}
               </div>
-							<h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+							<h1 class="fs-4 card-title fw-bold mb-4 text-center font-monospace">Register</h1>
 							<form method="POST" class="needs-validation" novalidate="" autocomplete="off" @submit.prevent="register">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="name">Name</label>
@@ -39,6 +39,9 @@
 
 								</div>
 								<div class="align-items-center d-flex">
+                  <div>
+										<nuxt-link to="/" style="text-decoration:none; color:black">Back to Homepage</nuxt-link>
+									</div>
 									<button type="submit" class="btn btn-primary ms-auto">
 										Register
 									</button>
@@ -59,6 +62,7 @@
 
 <script>
 export default {
+ layout: 'auth',
  middleware: 'guest',
   data() {
     return {

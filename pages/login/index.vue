@@ -8,7 +8,7 @@
               <div class="alert alert-danger" v-for="(error, index) in errors" :key="index">
                 {{ error[0] }}
               </div>
-							<h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
+							<h1 class="fs-4 card-title fw-bold mb-4 text-center font-monospace">Login</h1>
 							<form method="POST" class="needs-validation" novalidate="" autocomplete="off" @submit.prevent="userLogin">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">E-Mail Address</label>
@@ -23,9 +23,8 @@
 								</div>
 
 								<div class="d-flex align-items-center">
-									<div class="form-check">
-										<input type="checkbox" name="remember" id="remember" class="form-check-input">
-										<label for="remember" class="form-check-label">Remember Me</label>
+									<div>
+										<nuxt-link to="/" style="text-decoration:none; color:black">Back to Homepage</nuxt-link>
 									</div>
 									<button type="submit" class="btn btn-primary ms-auto">
 										Login
@@ -47,6 +46,7 @@
 
 <script>
 export default {
+  layout: 'auth',
   middleware: 'guest',
 
   data() {
