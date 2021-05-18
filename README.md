@@ -1,4 +1,4 @@
-# frontend
+# Frontend Blog
 
 ## Build Setup
 
@@ -16,5 +16,8 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
+## Code for Backend API
+Backend dibangun dengan Framework Laravel [clone repo](https://github.com/andes2912/backend-api-blog)
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
