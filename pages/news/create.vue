@@ -12,7 +12,7 @@
             <div class="alert alert-danger" v-for="(error, index) in errors" :key="index">
               {{ error[0] }}
             </div>
-            <div class="col-8">
+            <div class="col-lg-8">
               <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" v-model="title" id="title" placeholder="Enter Ttile">
@@ -24,7 +24,7 @@
                 </no-ssr>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3">
               <div class="mb-3">
                 <label for="category" class="form-label">Category</label>
                 <select class="form-select" v-model="category_id">

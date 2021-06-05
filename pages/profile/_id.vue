@@ -6,7 +6,9 @@
         <div class="card-body">
          <div class="row">
             <div class="col-lg-4">
-            <img src="~/assets/images/avatar.svg" class=" avatar">
+            <!-- <img src="~/assets/images/avatar.svg" class=" avatar"> -->
+          <img :src="profile.gender == 1 ? require('~/assets/images/avatar.svg') : require('~/assets/images/avatar_f.svg')" class=" avatar">
+
           </div>
             <div class="col-lg">
               <form method="post" @submit.prevent="updateUser">
