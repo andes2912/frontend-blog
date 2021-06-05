@@ -20,6 +20,9 @@
 
         <div class="card-body">
           <h5 class="card-title font-monospace">Your Activity</h5>
+          <ul v-for="(logs, indes) in log" :key="index">
+            <li> {{logs.method}} - {{logs.Note}}  | {{logs.created_at | moments}} </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -36,12 +39,14 @@ export default {
 
   data() {
     return {
-      user: []
-    }
+      user: [],
+      log: []
+      }
   },
 
   mounted() {
-    this.getUser()
+    this.getUser(),
+    this.getActivity()
   },
 
   methods: {
@@ -50,12 +55,23 @@ export default {
       .then(response => {
         this.user = response.data.user
       })
+    },
+
+    getActivity() {
+      this.$axios.get('log-activity')
+      .then(response => {
+        this.log = response.data.log
+      })
     }
   },
 
   filters: {
     moment: function (date) {
       return moment(date).format('D MMMM YYYY');
+    },
+
+    moments: function (date) {
+      return moment(date).format('D MMMM YYYY H:m:s')
     }
   }
 
